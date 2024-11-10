@@ -117,15 +117,15 @@ class AdminController {
         try {
             const [roles] = await pool.execute(`
                 SELECT r.roleID, r.name,
-                       GROUP_CONCAT(p.name) as permissions,
+                       GROUP_CONCAT(p.url) as permissions,
                        COUNT(DISTINCT u.userId_hash) as user_count
                 FROM Role r
                 LEFT JOIN Role_Permission rp ON r.roleID = rp.roleID
-                LEFT JOIN Permission p ON rp.permissionID = p.permissionID
+                LEFT JOIN permission p ON rp.permissionID = p.permissionID
                 LEFT JOIN User u ON r.roleID = u.roleID
                 GROUP BY r.roleID
             `);
-
+    
             res.json(roles);
         } catch (error) {
             console.error('Admin get roles error:', error);

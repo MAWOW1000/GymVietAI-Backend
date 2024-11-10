@@ -1,6 +1,14 @@
 module.exports = {
     // User Queries
     user: {
+        getAll: `
+        SELECT u.userId_hash, u.firstname, u.lastname, u.email, 
+               u.gender, u.dob, u.is_active, r.name as role_name,
+               u.created_at, u.updated_at
+        FROM User u
+        LEFT JOIN Role r ON u.roleID = r.roleID
+        ORDER BY u.created_at DESC
+        `,
         findByEmail: `
             SELECT u.*, r.name as role_name 
             FROM User u 

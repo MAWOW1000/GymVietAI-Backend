@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const adminController = require('../controllers/adminController');
+const AdminController = require('../controllers/adminController');
 const { verifyToken, isAdmin } = require('../middleware/auth');
 const { validateUserCreate, validateUserUpdate } = require('../middleware/validate');
 
@@ -8,15 +8,15 @@ const { validateUserCreate, validateUserUpdate } = require('../middleware/valida
 router.use(verifyToken, isAdmin);
 
 // User Management
-router.get('/users', adminController.getAllUsers);
-router.post('/users', validateUserCreate, adminController.createUser);
-router.put('/users/:id', validateUserUpdate, adminController.updateUser);
-router.delete('/users/:id', adminController.deleteUser);
+router.get('/users', AdminController.getAllUsers.bind(AdminController));
+router.post('/users', validateUserCreate, AdminController.createUser.bind(AdminController));
+router.put('/users/:id', validateUserUpdate, AdminController.updateUser.bind(AdminController));
+router.delete('/users/:id', AdminController.deleteUser.bind(AdminController));
 
 // Role Management
-router.get('/roles', adminController.getAllRoles);
+router.get('/roles', AdminController.getAllRoles.bind(AdminController));
 
 // Dashboard Stats
-router.get('/dashboard', adminController.getDashboardStats);
+router.get('/dashboard', AdminController.getDashboardStats.bind(AdminController));
 
 module.exports = router;
