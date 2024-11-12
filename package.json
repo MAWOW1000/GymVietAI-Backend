@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "blog",
   "version": "1.0.0",
   "main": "src/index.js",
@@ -30,5 +31,29 @@
     "node-sass": "^9.0.0",
     "nodemon": "^3.1.4",
     "prettier": "^3.3.3"
+=======
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "express-rate-limit": "^7.4.1",
+    "express-validator": "^7.2.0",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.11.4",
+    "nodemailer": "^6.9.16",
+    "nodemon": "^3.1.7"
+>>>>>>> b9243c9ea4a0b68c734a8938c804bb2540663c68
   }
 }
