@@ -38,11 +38,11 @@ exports.hasPermission = (permission) => {
             `, [req.user.role]);
 
             const userPermissions = permissions.map(p => p.name);
-            
+
             if (!userPermissions.includes(permission)) {
                 return res.status(403).json({ message: messages.auth.unauthorized });
             }
-            
+
             next();
         } catch (error) {
             res.status(500).json({ message: messages.server.error });
