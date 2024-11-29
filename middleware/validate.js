@@ -132,6 +132,17 @@ exports.validateUserUpdate = [
         .withMessage('is_active phải là boolean'),
     validateResult
 ];
+
+exports.validateChatMessage = [
+    body('message')
+        .notEmpty()
+        .withMessage('Tin nhắn không được để trống')
+        .trim()
+        .isLength({ max: 500 })
+        .withMessage('Tin nhắn không được vượt quá 500 ký tự'),
+    validateResult
+];
+
 // Helper function để kiểm tra kết quả validation
 function validateResult(req, res, next) {
     const errors = validationResult(req);

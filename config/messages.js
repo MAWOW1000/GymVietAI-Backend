@@ -38,5 +38,12 @@ module.exports = {
     server: {
         error: 'Đã có lỗi xảy ra',
         databaseError: 'Lỗi database'
+    },
+
+    chat: {
+        messageRequired: 'Tin nhắn không được để trống',
+        messageTooLong: 'Tin nhắn không được vượt quá 500 ký tự',
+        historyCleared: 'Đã xóa lịch sử chat',
+        aiNotConfigured: 'Hệ thống AI chưa được cấu hình'
     }
 };

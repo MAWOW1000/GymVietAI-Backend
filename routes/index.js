@@ -7,6 +7,8 @@ const roleRoutes = require('./roleRoutes');
 const { apiLimiter } = require('../middleware/rateLimiter');
 const { notFound } = require('../middleware/errorHandler');
 const adminRoutes = require('./adminRoutes');
+const chatbotRoutes = require('./chatbotRoutes');
+const chatPromptRoutes = require('./chatPromptRoutes');
 
 // Apply rate limiting to all routes
 router.use(apiLimiter);
@@ -17,6 +19,9 @@ router.use('/users', userRoutes);
 router.use('/profile', profileRoutes);
 router.use('/roles', roleRoutes);
 router.use('/admin', adminRoutes);
+router.use('/chatbot', chatbotRoutes);
+router.use('/prompts', chatPromptRoutes);
+
 // Handle 404
 router.use(notFound);
 

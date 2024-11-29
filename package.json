@@ -1,37 +1,4 @@
 {
-<<<<<<< HEAD
-  "name": "blog",
-  "version": "1.0.0",
-  "main": "src/index.js",
-  "scripts": {
-    "watch": "node-sass --watch src/resources/scss/ -o src/public/css/",
-    "start": "nodemon src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "husky"
-  },
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "lint-staged": {
-    "src/**/*.{js,json,scss}": "prettier --write --single-quote --tab-width 4 --trailing-comma all"
-  },
-  "dependencies": {
-    "bootstrap-icons": "^1.11.3",
-    "express": "^4.21.0",
-    "express-handlebars": "^8.0.1",
-    "method-override": "^3.0.0",
-    "mongoose": "^8.6.3",
-    "mongoose-delete": "^1.0.2",
-    "mongoose-slug-updater": "^3.3.0"
-  },
-  "devDependencies": {
-    "husky": "^9.1.6",
-    "lint-staged": "^15.2.10",
-    "morgan": "^1.10.0",
-    "node-sass": "^9.0.0",
-    "nodemon": "^3.1.4",
-    "prettier": "^3.3.3"
-=======
   "name": "backend",
   "version": "1.0.0",
   "main": "server.js",
@@ -44,6 +11,8 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "axios": "^1.7.8",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
@@ -53,7 +22,7 @@
     "jsonwebtoken": "^9.0.2",
     "mysql2": "^3.11.4",
     "nodemailer": "^6.9.16",
-    "nodemon": "^3.1.7"
->>>>>>> b9243c9ea4a0b68c734a8938c804bb2540663c68
+    "nodemon": "^3.1.7",
+    "openai": "^4.73.1"
   }
 }
